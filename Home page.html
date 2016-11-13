@@ -1,0 +1,22 @@
+<section class="clearfix">
+  <div class="knowledge-base">
+    <h1>{{help_center.name}}</h1>
+    <ul class="category-list">
+      {{#each categories}}
+        <li><a href="{{url}}">{{name}}</a></li>
+      {{/each}}
+      {{pagination}}
+    </ul>
+  </div>
+  <div class="community">
+    {{#if help_center.community_enabled}}
+      <h4>
+        {{t 'community'}}
+        {{#link 'community'}}
+          {{t 'browse'}}
+        {{/link}}
+      </h4>
+    {{/if}}
+    {{recent_activity}}
+  </div>
+</section>
