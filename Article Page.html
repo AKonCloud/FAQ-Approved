@@ -1,0 +1,38 @@
+<nav class="sub-nav clearfix">
+  {{breadcrumbs}}
+</nav>
+
+<div class="clearfix">
+  <article class="main-column">
+    <header class="article-header clearfix">
+      <h1>{{#if article.internal}}
+        <span class="visibility-internal" data-title="{{t 'internal'}}">
+          <span class="visibility-internal-icon"></span>
+        </span>
+      {{/if}} {{article.title}}</h1>
+    </header>
+
+    <div class="subtle-wrap">
+      <div class="content-body article-body">
+        {{article.body}}
+      </div>
+
+      <div class="article-attachments">
+        <ul class="attachments">
+          {{#each attachments}}
+            <li>
+              <a href="{{url}}" target="_blank">{{name}}</a>
+              <span>({{size}})</span>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </article>
+
+  <aside class="article-sidebar side-column">
+    {{recent_articles}}
+    {{related_articles}}
+  </aside>
+
+</div>
